@@ -53,6 +53,31 @@
             color: #fff;
         }
 
+        .page-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .ad-panel {
+            width: 300px;
+            min-height: 600px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 60px;
+            align-self: flex-start;
+        }
+
+        .ad-panel iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            background: #130f26;
+        }
+
         .container {
             max-width: 800px;
             width: 100%;
@@ -203,6 +228,11 @@
         <button class="lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button>
     </div>
 
+    <div class="page-wrapper">
+        <div class="ad-panel">
+            <iframe src="/ads/scripts/rightleftpanel/index.html"></iframe>
+        </div>
+
     <div class="container">
         <div class="hero">
             <h1 data-en="Blender Tools & miHoYo Shaders" data-vi="Công cụ Blender & Shader miHoYo">Blender Tools & miHoYo Shaders</h1>
@@ -297,6 +327,11 @@
         </div>
 
         <div class="footer" data-en="Built with Blender." data-vi="Xây dựng với Blender.">Built with Blender.</div>
+    </div>
+
+        <div class="ad-panel">
+            <iframe src="/ads/scripts/rightleftpanel/index.html"></iframe>
+        </div>
     </div>
 
     <script>
