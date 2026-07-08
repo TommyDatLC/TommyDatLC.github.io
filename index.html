@@ -210,8 +210,18 @@
     </style>
 </head>
 <body>
-    <!-- Monetag Ad (replace YOUR_MONETAG_CODE with your actual Monetag script) -->
-    <script type='text/javascript' src='//YOUR_MONETAG_CODE.profitableclick.com/...' async='async'></script>
+    <!-- Monetag Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(function(reg) {
+                    console.log('Monetag SW registered');
+                })
+                .catch(function(err) {
+                    console.log('Monetag SW failed:', err);
+                });
+        }
+    </script>
 
     <div id="particles"></div>
 
