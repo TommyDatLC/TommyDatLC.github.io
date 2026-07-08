@@ -18,7 +18,7 @@
 
         body {
             font-family: 'Bahnschrift', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0d1b2a;
+            background: #130f26;
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -38,7 +38,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 3px solid rgba(255,255,255,0.3);
+            border: 3px solid #f72585;
             object-fit: cover;
             margin: 2rem auto 1.5rem;
             display: block;
@@ -50,7 +50,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 3px solid rgba(255,255,255,0.3);
+            border: 3px solid #f72585;
             margin: 2rem auto 1.5rem;
             display: flex;
             align-items: center;
@@ -64,7 +64,7 @@
         h1 {
             font-size: 2.8rem;
             font-weight: 700;
-            background: linear-gradient(to right, #ffffff, #8899aa);
+            background: linear-gradient(to right, #f72585, #4cc9f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -73,41 +73,42 @@
 
         .tagline {
             font-size: 1.2rem;
-            color: #8899aa;
+            color: #4cc9f0;
             margin-bottom: 2rem;
             line-height: 1.8;
         }
 
         .tagline span {
             display: inline-block;
-            background: rgba(255,255,255,0.08);
+            background: rgba(247,37,133,0.15);
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
             margin: 0.2rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(247,37,133,0.4);
             font-size: 0.9rem;
+            color: #f72585;
         }
 
         /* Section */
         .section {
-            background: rgba(255,255,255,0.05);
+            background: rgba(247,37,133,0.05);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(247,37,133,0.2);
         }
 
         .section h2 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: #ffffff;
+            color: #f72585;
         }
 
         .bio {
             font-size: 1.1rem;
             line-height: 1.9;
-            color: #c0c8d4;
+            color: #d0d0e8;
         }
 
         /* Contact Links */
@@ -119,13 +120,13 @@
         }
 
         .contact-card {
-            background: rgba(255,255,255,0.03);
+            background: rgba(76,201,240,0.05);
             border-radius: 14px;
             padding: 1.2rem 0.8rem;
             text-decoration: none;
             color: #fff;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(76,201,240,0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -134,9 +135,9 @@
 
         .contact-card:hover {
             transform: translateY(-4px);
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,255,255,0.25);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            background: rgba(247,37,133,0.15);
+            border-color: #f72585;
+            box-shadow: 0 8px 25px rgba(247,37,133,0.2);
         }
 
         .contact-card .icon {
@@ -147,18 +148,23 @@
         .contact-card .icon svg {
             width: 100%;
             height: 100%;
-            fill: #ffffff;
+            fill: #4cc9f0;
+        }
+
+        .contact-card:hover .icon svg {
+            fill: #f72585;
         }
 
         .contact-card .label {
             font-size: 0.85rem;
-            color: #778899;
+            color: #8888aa;
         }
 
         .contact-card .value {
             font-size: 0.9rem;
             font-weight: 600;
             word-break: break-all;
+            color: #ffffff;
         }
 
         /* Skills */
@@ -170,16 +176,19 @@
         }
 
         .skill-tag {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(76,201,240,0.1);
+            border: 1px solid rgba(76,201,240,0.3);
             padding: 0.5rem 1.2rem;
             border-radius: 25px;
             font-size: 0.9rem;
+            color: #4cc9f0;
             transition: all 0.3s;
         }
 
         .skill-tag:hover {
-            background: rgba(255,255,255,0.12);
+            background: rgba(247,37,133,0.2);
+            border-color: #f72585;
+            color: #f72585;
             transform: scale(1.05);
         }
 
@@ -189,7 +198,7 @@
             padding: 1.5rem;
             color: #666;
             font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(247,37,133,0.15);
             width: 100%;
         }
 
@@ -335,6 +344,7 @@
             resize();
             window.addEventListener('resize', resize);
 
+            const colors = ['#f72585', '#4cc9f0'];
             for (let i = 0; i < COUNT; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
@@ -342,19 +352,20 @@
                     vx: (Math.random() - 0.5) * 0.8,
                     vy: (Math.random() - 0.5) * 0.8,
                     r: Math.random() * 2 + 1,
-                    a: Math.random() * 0.4 + 0.2
+                    a: Math.random() * 0.4 + 0.2,
+                    color: colors[Math.floor(Math.random() * colors.length)]
                 });
             }
 
             function draw() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = 'rgba(255,255,255,0.4)';
                 for (const p of particles) {
                     p.x += p.vx;
                     p.y += p.vy;
                     if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
                     if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
                     ctx.globalAlpha = p.a;
+                    ctx.fillStyle = p.color;
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                     ctx.fill();
