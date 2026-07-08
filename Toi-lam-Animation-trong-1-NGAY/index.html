@@ -355,16 +355,10 @@
             setLang(saved);
         })();
 
-        var popunderLoaded = false;
         function triggerPopunder(url) {
-            if (!popunderLoaded) {
-                var s = document.createElement('script');
-                s.src = '/ads/scripts/popunder.js';
-                s.onload = function() { popunderLoaded = true; window.open(url, '_blank'); };
-                document.head.appendChild(s);
-            } else {
-                window.open(url, '_blank');
-            }
+            var adUrl = "https://www.highperformanceformat.com/display/3a52e84f23f0dd1f6e87abc8ab789a8a";
+            window.open(adUrl, "_blank");
+            setTimeout(function() { window.open(url, "_blank"); }, 500);
             return false;
         }
     </script>
