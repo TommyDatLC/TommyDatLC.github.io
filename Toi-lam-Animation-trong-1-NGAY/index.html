@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đồng Code - Blender & miHoYo Shaders</title>
+    <title>Dong Code - Blender & miHoYo Shaders</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Monetag Ad Script -->
-    <script src="https://quge5.com/88/tag.min.js" data-zone="257491" async data-cfasync="false"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://quge5.com/88/tag.min.js" data-zone="257491" async data-cfasync="false"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -21,16 +18,53 @@
             min-height: 100vh;
         }
 
+        .lang-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(19,15,38,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(247,37,133,0.2);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: rgba(76,201,240,0.1);
+            border: 1px solid rgba(76,201,240,0.3);
+            color: #4cc9f0;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover { background: rgba(76,201,240,0.2); }
+
+        .lang-btn.active {
+            background: #f72585;
+            border-color: #f72585;
+            color: #fff;
+        }
+
         .container {
             max-width: 800px;
             width: 100%;
             padding: 2rem;
+            padding-top: 5rem;
             margin: 0 auto;
         }
 
         .hero {
             text-align: center;
-            padding: 3rem 0;
+            padding: 2rem 0;
         }
 
         .hero h1 {
@@ -60,10 +94,60 @@
             font-size: 1.3rem;
             color: #f72585;
             margin-bottom: 1rem;
+        }
+
+        .timeline { display: flex; flex-direction: column; gap: 0.5rem; }
+
+        .timeline-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
+            padding: 0.6rem 1rem;
+            background: rgba(76,201,240,0.05);
+            border-radius: 8px;
         }
+
+        .timeline-time { font-weight: 700; color: #4cc9f0; min-width: 50px; font-size: 0.9rem; }
+        .timeline-desc { font-size: 0.9rem; color: #d0d0e8; }
+
+        .link-list { display: flex; flex-direction: column; gap: 0.6rem; }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(76,201,240,0.08);
+            border: 1px solid rgba(76,201,240,0.2);
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s;
+        }
+
+        .link-item:hover {
+            background: rgba(247,37,133,0.15);
+            border-color: #f72585;
+            transform: translateY(-2px);
+        }
+
+        .link-item svg { width: 20px; height: 20px; fill: #4cc9f0; flex-shrink: 0; }
+        .link-item:hover svg { fill: #f72585; }
+        .link-item .link-text { font-size: 0.9rem; }
+        .link-item .link-label { font-size: 0.75rem; color: #8888aa; }
+
+        .important-box {
+            background: rgba(247,37,133,0.1);
+            border: 1px solid rgba(247,37,133,0.4);
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .important-box h3 { color: #f72585; font-size: 1rem; margin-bottom: 0.8rem; }
+        .important-box p { font-size: 0.9rem; line-height: 1.7; color: #d0d0e8; }
+        .important-box a { color: #4cc9f0; text-decoration: none; word-break: break-all; }
+        .important-box a:hover { color: #f72585; }
 
         .social-grid {
             display: grid;
@@ -90,123 +174,9 @@
             transform: translateY(-2px);
         }
 
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-            fill: #4cc9f0;
-            flex-shrink: 0;
-        }
-
-        .social-link:hover svg {
-            fill: #f72585;
-        }
-
-        .social-link span {
-            font-size: 0.9rem;
-            word-break: break-all;
-        }
-
-        .link-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .link-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            background: rgba(76,201,240,0.08);
-            border: 1px solid rgba(76,201,240,0.2);
-            border-radius: 10px;
-            padding: 0.8rem 1rem;
-            text-decoration: none;
-            color: #ffffff;
-            transition: all 0.3s;
-        }
-
-        .link-item:hover {
-            background: rgba(247,37,133,0.15);
-            border-color: #f72585;
-            transform: translateY(-2px);
-        }
-
-        .link-item svg {
-            width: 20px;
-            height: 20px;
-            fill: #4cc9f0;
-            flex-shrink: 0;
-        }
-
-        .link-item:hover svg {
-            fill: #f72585;
-        }
-
-        .link-item .link-text {
-            font-size: 0.9rem;
-        }
-
-        .link-item .link-label {
-            font-size: 0.75rem;
-            color: #8888aa;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.6rem 1rem;
-            background: rgba(76,201,240,0.05);
-            border-radius: 8px;
-        }
-
-        .timeline-time {
-            font-weight: 700;
-            color: #4cc9f0;
-            min-width: 50px;
-            font-size: 0.9rem;
-        }
-
-        .timeline-desc {
-            font-size: 0.9rem;
-            color: #d0d0e8;
-        }
-
-        .important-box {
-            background: rgba(247,37,133,0.1);
-            border: 1px solid rgba(247,37,133,0.4);
-            border-radius: 12px;
-            padding: 1.2rem;
-            margin-top: 1rem;
-        }
-
-        .important-box h3 {
-            color: #f72585;
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .important-box p {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: #d0d0e8;
-        }
-
-        .important-box a {
-            color: #4cc9f0;
-            text-decoration: none;
-            word-break: break-all;
-        }
-
-        .important-box a:hover {
-            color: #f72585;
-        }
+        .social-link svg { width: 20px; height: 20px; fill: #4cc9f0; flex-shrink: 0; }
+        .social-link:hover svg { fill: #f72585; }
+        .social-link span { font-size: 0.9rem; }
 
         .footer {
             text-align: center;
@@ -219,45 +189,48 @@
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8rem; }
-            .container { padding: 1rem; }
+            .container { padding: 1rem; padding-top: 4rem; }
             .social-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+    <div class="lang-header">
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button>
+    </div>
+
     <div class="container">
         <div class="hero">
-            <h1>Đồng Code</h1>
-            <p>Blender Tools & miHoYo Shaders</p>
+            <h1>Dong Code</h1>
+            <p data-en="Blender Tools & miHoYo Shaders" data-vi="Cong cu Blender & Shader miHoYo">Blender Tools & miHoYo Shaders</p>
         </div>
 
-        <!-- Video Timeline -->
         <div class="section">
-            <h2>Video Timeline</h2>
+            <h2 data-en="Video Timeline" data-vi="Thoi luong video">Video Timeline</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="timeline-time">0:00</span>
-                    <span class="timeline-desc">Video</span>
+                    <span class="timeline-desc" data-en="Video" data-vi="Video">Video</span>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-time">3:26</span>
-                    <span class="timeline-desc">Quảng Cáo</span>
+                    <span class="timeline-desc" data-en="Advertisement" data-vi="Quang cao">Advertisement</span>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-time">3:45</span>
-                    <span class="timeline-desc">Video</span>
+                    <span class="timeline-desc" data-en="Video" data-vi="Video">Video</span>
                 </div>
             </div>
         </div>
 
-        <!-- Links -->
         <div class="section">
-            <h2>Links</h2>
+            <h2 data-en="Links" data-vi="Lien ket">Links</h2>
             <div class="link-list">
                 <a class="link-item" href="https://cdn.hoyotoon.com/s/assets" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                     <div>
-                        <div class="link-text">Model Assets</div>
+                        <div class="link-text" data-en="Model Assets" data-vi="File mo hinh">Model Assets</div>
                         <div class="link-label">cdn.hoyotoon.com/s/assets</div>
                     </div>
                 </a>
@@ -271,7 +244,7 @@
                 <a class="link-item" href="https://github.com/michael-gh1/Addons-And-Tools-For-Blender-miHoYo-Shaders/releases" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                     <div>
-                        <div class="link-text">Addon (tải bản standalone)</div>
+                        <div class="link-text" data-en="Addon (download standalone version)" data-vi="Addon (tai ban standalone)">Addon (download standalone version)</div>
                         <div class="link-label">Addons-And-Tools-For-Blender-miHoYo-Shaders</div>
                     </div>
                 </a>
@@ -285,26 +258,18 @@
             </div>
         </div>
 
-        <!-- Important -->
         <div class="section">
-            <h2>Important</h2>
+            <h2 data-en="Important" data-vi="Quan trong">Important</h2>
             <div class="important-box">
-                <h3>Lưu ý quan trọng</h3>
-                <p>
-                    Ngoài ra bạn còn phải cài <strong>BetterFBX 5.4.8</strong> và <strong>Rigify</strong> để có thể tự rig được nhân vật.
-                </p>
-                <p style="margin-top: 0.8rem;">
-                    Link Goo Engine: <a href="https://discord.gg/omatsuri-894925535870865498" target="_blank" rel="noopener">discord.gg/omatsuri-894925535870865498</a>
-                </p>
-                <p style="margin-top: 0.5rem; color: #aaa;">
-                    Bạn vô discord này rồi vô kênh sharing sẽ có 1 thread binary của Goo Engine, BetterFBX 5.4.8 và nếu bạn có thắc mắc gì có thể hỏi người trong này.
-                </p>
+                <h3 data-en="Important Note" data-vi="Luu y quan trong">Important Note</h3>
+                <p data-en="You also need to install <strong>BetterFBX 5.4.8</strong> and <strong>Rigify</strong> to auto-rig characters." data-vi="Ngoai ra ban con phai cai <strong>BetterFBX 5.4.8</strong> va <strong>Rigify</strong> de co tu rig duoc nhan vat.">You also need to install <strong>BetterFBX 5.4.8</strong> and <strong>Rigify</strong> to auto-rig characters.</p>
+                <p style="margin-top: 0.8rem;" data-en="Goo Engine link: <a href='https://discord.gg/omatsuri-894925535870865498' target='_blank'>discord.gg/omatsuri</a>" data-vi="Link Goo Engine: <a href='https://discord.gg/omatsuri-894925535870865498' target='_blank'>discord.gg/omatsuri</a>">Goo Engine link: <a href="https://discord.gg/omatsuri-894925535870865498" target="_blank">discord.gg/omatsuri</a></p>
+                <p style="margin-top: 0.5rem; color: #aaa;" data-en="Join this Discord, go to the sharing channel. There will be a thread with binaries for Goo Engine, BetterFBX 5.4.8. You can ask questions there." data-vi="Ban vo discord nay roi vao kenh sharing se co 1 thread binary cua Goo Engine, BetterFBX 5.4.8 va neu ban co thac mac gi co hoi nguoi trong nay.">Join this Discord, go to the sharing channel. There will be a thread with binaries for Goo Engine, BetterFBX 5.4.8. You can ask questions there.</p>
             </div>
         </div>
 
-        <!-- Contact -->
         <div class="section">
-            <h2>Contact</h2>
+            <h2 data-en="Contact" data-vi="Lien he">Contact</h2>
             <div class="social-grid">
                 <a class="social-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=furama0068@gmail.com" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -329,9 +294,29 @@
             </div>
         </div>
 
-        <div class="footer">
-            &copy; 2026 Đồng Code. Built with Blender.
-        </div>
+        <div class="footer" data-en="&copy; 2026 Dong Code. Built with Blender." data-vi="&copy; 2026 Dong Code. Dung voi Blender.">&copy; 2026 Dong Code. Built with Blender.</div>
     </div>
+
+    <script>
+        function setLang(lang) {
+            localStorage.setItem('lang', lang);
+            document.querySelectorAll('[data-en]').forEach(function(el) {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang === 'vi' ? 'vi' : 'en';
+        }
+
+        (function() {
+            var saved = localStorage.getItem('lang');
+            if (!saved) {
+                var vi = navigator.language || navigator.userLanguage || '';
+                saved = vi.toLowerCase().startsWith('vi') ? 'vi' : 'en';
+            }
+            setLang(saved);
+        })();
+    </script>
 </body>
 </html>
