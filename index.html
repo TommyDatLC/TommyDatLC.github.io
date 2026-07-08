@@ -1,1 +1,355 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Nguyen Duc Dat - Portfolio</title>    <!-- Google Font: Inter (similar to Bahnschrift) -->    <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">    <style>        * { margin: 0; padding: 0; box-sizing: border-box; }        body {            font-family: 'Bahnschrift', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;            background: #130f26;            color: #ffffff;            min-height: 100vh;            display: flex;            flex-direction: column;            align-items: center;        }        .container {            max-width: 900px;            width: 100%;            padding: 2rem;            text-align: center;        }        /* Avatar */        .avatar {            width: 180px;            height: 180px;            border-radius: 50%;            border: 3px solid #f72585;            object-fit: cover;            margin: 2rem auto 1.5rem;            display: block;            background: rgba(255,255,255,0.05);            padding: 4px;        }        .avatar-placeholder {            width: 180px;            height: 180px;            border-radius: 50%;            border: 3px solid #f72585;            margin: 2rem auto 1.5rem;            display: flex;            align-items: center;            justify-content: center;            font-size: 4rem;            font-weight: bold;            background: rgba(255,255,255,0.05);            color: #ffffff;        }        h1 {            font-size: 2.8rem;            font-weight: 700;            background: linear-gradient(to right, #f72585, #4cc9f0);            -webkit-background-clip: text;            -webkit-text-fill-color: transparent;            background-clip: text;            margin-bottom: 0.5rem;        }        .tagline {            font-size: 1.2rem;            color: #4cc9f0;            margin-bottom: 2rem;            line-height: 1.8;        }        .tagline span {            display: inline-block;            background: rgba(247,37,133,0.15);            padding: 0.2rem 0.8rem;            border-radius: 20px;            margin: 0.2rem;            border: 1px solid rgba(247,37,133,0.4);            font-size: 0.9rem;            color: #f72585;        }        /* Section */        .section {            background: rgba(247,37,133,0.05);            backdrop-filter: blur(10px);            border-radius: 20px;            padding: 2rem;            margin-bottom: 2rem;            border: 1px solid rgba(247,37,133,0.2);        }        .section h2 {            font-size: 1.5rem;            margin-bottom: 1.5rem;            color: #f72585;        }        .bio {            font-size: 1.1rem;            line-height: 1.9;            color: #d0d0e8;        }        /* Contact Links */        .contact-grid {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));            gap: 1rem;            margin-top: 1rem;        }        .contact-card {            background: rgba(76,201,240,0.05);            border-radius: 14px;            padding: 1.2rem 0.8rem;            text-decoration: none;            color: #fff;            transition: all 0.3s ease;            border: 1px solid rgba(76,201,240,0.2);            display: flex;            flex-direction: column;            align-items: center;            gap: 0.5rem;        }        .contact-card:hover {            transform: translateY(-4px);            background: rgba(247,37,133,0.15);            border-color: #f72585;            box-shadow: 0 8px 25px rgba(247,37,133,0.2);        }        .contact-card .icon {            width: 36px;            height: 36px;        }        .contact-card .icon svg {            width: 100%;            height: 100%;            fill: #4cc9f0;        }        .contact-card:hover .icon svg {            fill: #f72585;        }        .contact-card .label {            font-size: 0.85rem;            color: #8888aa;        }        .contact-card .value {            font-size: 0.9rem;            font-weight: 600;            word-break: break-all;            color: #ffffff;        }        /* Skills */        .skills-grid {            display: flex;            flex-wrap: wrap;            gap: 0.8rem;            justify-content: center;        }        .skill-tag {            background: rgba(76,201,240,0.1);            border: 1px solid rgba(76,201,240,0.3);            padding: 0.5rem 1.2rem;            border-radius: 25px;            font-size: 0.9rem;            color: #4cc9f0;            transition: all 0.3s;        }        .skill-tag:hover {            background: rgba(247,37,133,0.2);            border-color: #f72585;            color: #f72585;            transform: scale(1.05);        }        /* Footer */        .footer {            margin-top: 2rem;            padding: 1.5rem;            color: #666;            font-size: 0.85rem;            border-top: 1px solid rgba(247,37,133,0.15);            width: 100%;        }        /* Particles / background effect */        #particles {            position: fixed;            top: 0; left: 0;            width: 100%; height: 100%;            z-index: -1;            pointer-events: none;        }        @media (max-width: 600px) {            h1 { font-size: 2rem; }            .container { padding: 1rem; }            .contact-grid { grid-template-columns: 1fr 1fr; }        }    </style></head><body>    <!-- Monetag Service Worker Registration -->    <script>        if ('serviceWorker' in navigator) {            navigator.serviceWorker.register('sw.js')                .then(function(reg) {                    console.log('Monetag SW registered');                })                .catch(function(err) {                    console.log('Monetag SW failed:', err);                });        }    </script>    <div id="particles"></div>    <div class="container">        <!-- Avatar Placeholder (replace with your image) -->        <div class="avatar-placeholder">Đ</div>        <h1>Nguyễn Đức Đạt</h1>        <div class="tagline">            <span>Developer</span>            <span>Computer Graphics</span>            <span>Data Analyst</span>            <span>Video Editor</span>            <span>YouTuber</span>        </div>        <!-- Bio -->        <div class="section">            <h2>About Me</h2>            <p class="bio">                Xin chào! I'm <strong>Nguyễn Đức Đạt</strong> — a Vietnamese developer passionate about                <strong>computer graphics</strong>, <strong>data analysis</strong>, and creative content.                I research and build visual computing solutions, edit videos, and run my own                <strong>YouTube channel</strong> where I share knowledge and creative work.                Always exploring the intersection of technology and art.            </p>        </div>        <!-- Skills -->        <div class="section">            <h2>Skills & Expertise</h2>            <div class="skills-grid">                <span class="skill-tag">C++ / C#</span>                <span class="skill-tag">Python</span>                <span class="skill-tag">JavaScript</span>                <span class="skill-tag">WebGL / OpenGL</span>                <span class="skill-tag">Data Visualization</span>                <span class="skill-tag">Machine Learning</span>                <span class="skill-tag">Video Editing</span>                <span class="skill-tag">Blender / 3D Animation</span>                <span class="skill-tag">Content Creation</span>            </div>        </div>        <!-- Contact -->        <div class="section">            <h2>Contact Me</h2>            <div class="contact-grid">                <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyenducdat298@gmail.com" target="_blank" rel="noopener">                    <div class="icon">                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>                        </svg>                    </div>                    <div class="value">Email</div>                    <div class="label">nguyenducdat298@gmail.com</div>                </a>                <a class="contact-card" href="https://www.facebook.com/profile.php?id=61586359562366" target="_blank" rel="noopener">                    <div class="icon">                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>                        </svg>                    </div>                    <div class="value">Facebook</div>                    <div class="label">@nguyenducdat</div>                </a>                <a class="contact-card" href="https://www.tiktok.com/@evernerd" target="_blank" rel="noopener">                    <div class="icon">                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>                        </svg>                    </div>                    <div class="value">TikTok</div>                    <div class="label">@evernerd</div>                </a>                <a class="contact-card" href="https://www.youtube.com/@Evernerd29" target="_blank" rel="noopener">                    <div class="icon">                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>                        </svg>                    </div>                    <div class="value">YouTube</div>                    <div class="label">@Evernerd29</div>                </a>            </div>        </div>        <div class="footer">            &copy; 2026 Nguyen Duc Dat. Built with passion.        </div>    </div>    <!-- Simple particle effect -->    <script>        (function() {            const canvas = document.createElement('canvas');            canvas.id = 'particles-canvas';            document.getElementById('particles').appendChild(canvas);            const ctx = canvas.getContext('2d');            let particles = [];            const COUNT = 80;            function resize() {                canvas.width = window.innerWidth;                canvas.height = window.innerHeight;            }            resize();            window.addEventListener('resize', resize);            const colors = ['#f72585', '#4cc9f0'];            for (let i = 0; i < COUNT; i++) {                particles.push({                    x: Math.random() * canvas.width,                    y: Math.random() * canvas.height,                    vx: (Math.random() - 0.5) * 0.8,                    vy: (Math.random() - 0.5) * 0.8,                    r: Math.random() * 2 + 1,                    a: Math.random() * 0.4 + 0.2,                    color: colors[Math.floor(Math.random() * colors.length)]                });            }            function draw() {                ctx.clearRect(0, 0, canvas.width, canvas.height);                for (const p of particles) {                    p.x += p.vx;                    p.y += p.vy;                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;                    ctx.globalAlpha = p.a;                    ctx.fillStyle = p.color;                    ctx.beginPath();                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);                    ctx.fill();                }                ctx.globalAlpha = 1;                requestAnimationFrame(draw);            }            draw();        })();    </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Duc Dat - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Bahnschrift', 'Inter', 'Segoe UI', sans-serif;
+            background: #130f26;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Language Header */
+        .lang-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(19,15,38,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(247,37,133,0.2);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: rgba(76,201,240,0.1);
+            border: 1px solid rgba(76,201,240,0.3);
+            color: #4cc9f0;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(76,201,240,0.2);
+        }
+
+        .lang-btn.active {
+            background: #f72585;
+            border-color: #f72585;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem;
+            padding-top: 5rem;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .avatar-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid #f72585;
+            margin: 2rem auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+            background: rgba(255,255,255,0.05);
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #f72585, #4cc9f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #4cc9f0;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .tagline span {
+            display: inline-block;
+            background: rgba(247,37,133,0.15);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin: 0.2rem;
+            border: 1px solid rgba(247,37,133,0.4);
+            font-size: 0.9rem;
+            color: #f72585;
+        }
+
+        .section {
+            background: rgba(247,37,133,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(247,37,133,0.2);
+            text-align: left;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #f72585;
+            text-align: center;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #d0d0e8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-card {
+            background: rgba(76,201,240,0.05);
+            border-radius: 14px;
+            padding: 1.2rem 0.8rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(76,201,240,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            background: rgba(247,37,133,0.15);
+            border-color: #f72585;
+            box-shadow: 0 8px 25px rgba(247,37,133,0.2);
+        }
+
+        .contact-card .icon { width: 36px; height: 36px; }
+        .contact-card .icon svg { width: 100%; height: 100%; fill: #4cc9f0; }
+        .contact-card:hover .icon svg { fill: #f72585; }
+        .contact-card .label { font-size: 0.85rem; color: #8888aa; }
+        .contact-card .value { font-size: 0.9rem; font-weight: 600; word-break: break-all; color: #ffffff; }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(76,201,240,0.1);
+            border: 1px solid rgba(76,201,240,0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: #4cc9f0;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(247,37,133,0.2);
+            border-color: #f72585;
+            color: #f72585;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(247,37,133,0.15);
+            width: 100%;
+            text-align: center;
+        }
+
+        #particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; padding-top: 4rem; }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(function() {});
+        }
+    </script>
+
+    <!-- Language Header -->
+    <div class="lang-header">
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button>
+    </div>
+
+    <div id="particles"></div>
+
+    <div class="container">
+        <div class="avatar-placeholder">D</div>
+
+        <h1>Nguyen Duc Dat</h1>
+
+        <div class="tagline">
+            <span data-en="Developer" data-vi="Lap trinh vien">Developer</span>
+            <span data-en="Computer Graphics" data-vi="Do hoa may tinh">Computer Graphics</span>
+            <span data-en="Data Analyst" data-vi="Phan tich du lieu">Data Analyst</span>
+            <span data-en="Video Editor" data-vi="Bien tap video">Video Editor</span>
+            <span data-en="YouTuber" data-vi="YouTuber">YouTuber</span>
+        </div>
+
+        <div class="section">
+            <h2 data-en="About Me" data-vi="Gioi thieu">About Me</h2>
+            <p class="bio" data-en="Hello! I'm <strong>Nguyen Duc Dat</strong> — a Vietnamese developer passionate about <strong>computer graphics</strong>, <strong>data analysis</strong>, and creative content. I research and build visual computing solutions, edit videos, and run my own <strong>YouTube channel</strong> where I share knowledge and creative work. Always exploring the intersection of technology and art." data-vi="Xin chao! Toi la <strong>Nguyen Duc Dat</strong> — mot lap trinh vien Viet Nam dam me <strong>do hoa may tinh</strong>, <strong>phan tich du lieu</strong> va noi dung sang tao. Toi nghien cuu va xay dung giai phap tinh toan truc quac, bien tap video va van hanh <strong>kenh YouTube</strong> cua rieng minh, chia se kien thuc va cong viec sang tao. Luon kham pha giao diem giua cong nghe va nghe thuat.">Hello! I'm <strong>Nguyen Duc Dat</strong> — a Vietnamese developer passionate about <strong>computer graphics</strong>, <strong>data analysis</strong>, and creative content. I research and build visual computing solutions, edit videos, and run my own <strong>YouTube channel</strong> where I share knowledge and creative work. Always exploring the intersection of technology and art.</p>
+        </div>
+
+        <div class="section">
+            <h2 data-en="Skills & Expertise" data-vi="Ky nang & Chuyen mon">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">C++ / C#</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">WebGL / OpenGL</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag" data-en="Video Editing" data-vi="Bien tap video">Video Editing</span>
+                <span class="skill-tag" data-en="Blender / 3D Animation" data-vi="Blender / Hoat hinh 3D">Blender / 3D Animation</span>
+                <span class="skill-tag" data-en="Content Creation" data-vi="Tao noi dung">Content Creation</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 data-en="Contact Me" data-vi="Lien he">Contact Me</h2>
+            <div class="contact-grid">
+                <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyenducdat298@gmail.com" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                    <div class="value">Email</div>
+                    <div class="label">nguyenducdat298@gmail.com</div>
+                </a>
+                <a class="contact-card" href="https://www.facebook.com/profile.php?id=61586359562366" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
+                    <div class="value">Facebook</div>
+                    <div class="label">@nguyenducdat</div>
+                </a>
+                <a class="contact-card" href="https://www.tiktok.com/@evernerd" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
+                    <div class="value">TikTok</div>
+                    <div class="label">@evernerd</div>
+                </a>
+                <a class="contact-card" href="https://www.youtube.com/@Evernerd29" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+                    <div class="value">YouTube</div>
+                    <div class="label">@Evernerd29</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer" data-en="&copy; 2026 Nguyen Duc Dat. Built with passion." data-vi="&copy; 2026 Nguyen Duc Dat. Dung voi dam me.">&copy; 2026 Nguyen Duc Dat. Built with passion.</div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            localStorage.setItem('lang', lang);
+            document.querySelectorAll('[data-en]').forEach(function(el) {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang === 'vi' ? 'vi' : 'en';
+        }
+
+        (function() {
+            var saved = localStorage.getItem('lang');
+            if (!saved) {
+                var vi = navigator.language || navigator.userLanguage || '';
+                saved = vi.toLowerCase().startsWith('vi') ? 'vi' : 'en';
+            }
+            setLang(saved);
+
+            var canvas = document.createElement('canvas');
+            canvas.id = 'particles-canvas';
+            document.getElementById('particles').appendChild(canvas);
+            var ctx = canvas.getContext('2d');
+            var particles = [];
+            var COUNT = 80;
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            resize();
+            window.addEventListener('resize', resize);
+            var colors = ['#f72585', '#4cc9f0'];
+            for (var i = 0; i < COUNT; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.8,
+                    vy: (Math.random() - 0.5) * 0.8,
+                    r: Math.random() * 2 + 1,
+                    a: Math.random() * 0.4 + 0.2,
+                    color: colors[Math.floor(Math.random() * colors.length)]
+                });
+            }
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (var j = 0; j < particles.length; j++) {
+                    var p = particles[j];
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                    ctx.globalAlpha = p.a;
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+    </script>
+</body>
+</html>
