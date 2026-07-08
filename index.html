@@ -15,6 +15,7 @@
             background: #130f26;
             color: #ffffff;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* Language Header */
@@ -150,6 +151,8 @@
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
+            overflow: hidden;
+            text-align: center;
         }
 
         .contact-card:hover {
@@ -163,7 +166,7 @@
         .contact-card .icon svg { width: 100%; height: 100%; fill: #4cc9f0; }
         .contact-card:hover .icon svg { fill: #f72585; }
         .contact-card .label { font-size: 0.85rem; color: #8888aa; }
-        .contact-card .value { font-size: 0.9rem; font-weight: 600; word-break: break-all; color: #ffffff; }
+        .contact-card .value { font-size: 0.9rem; font-weight: 600; word-break: break-word; color: #ffffff; }
 
         .skills-grid {
             display: flex;
@@ -210,7 +213,8 @@
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
             .container { padding: 1rem; padding-top: 4rem; }
-            .contact-grid { grid-template-columns: 1fr 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+            .contact-card { word-break: break-word; }
         }
     </style>
 </head>
