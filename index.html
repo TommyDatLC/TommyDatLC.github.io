@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Duc Dat - Portfolio</title>
+
+    <!-- Google AdSense (replace with your own publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Avatar */
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #00d2ff;
+            object-fit: cover;
+            margin: 2rem auto 1.5rem;
+            display: block;
+            background: linear-gradient(145deg, #00d2ff, #3a7bd5);
+            padding: 4px;
+        }
+
+        .avatar-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #00d2ff;
+            margin: 2rem auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(145deg, #00d2ff, #3a7bd5);
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #00d2ff, #928dab);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #b0b0d0;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .tagline span {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin: 0.2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Section */
+        .section {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #00d2ff;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #d0d0e8;
+        }
+
+        /* Contact Links */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 1.2rem 0.8rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            background: rgba(0, 210, 255, 0.15);
+            border-color: #00d2ff;
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.15);
+        }
+
+        .contact-card .icon {
+            font-size: 2rem;
+        }
+
+        .contact-card .label {
+            font-size: 0.85rem;
+            color: #a0a0c0;
+        }
+
+        .contact-card .value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(0,210,255,0.2), rgba(58,123,213,0.2));
+            border: 1px solid rgba(0,210,255,0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, rgba(0,210,255,0.4), rgba(58,123,213,0.4));
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+        }
+
+        /* Particles / background effect */
+        #particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Monetag Ad (replace YOUR_MONETAG_CODE with your actual Monetag script) -->
+    <script type='text/javascript' src='//YOUR_MONETAG_CODE.profitableclick.com/...' async='async'></script>
+
+    <div id="particles"></div>
+
+    <div class="container">
+        <!-- Avatar Placeholder (replace with your image) -->
+        <div class="avatar-placeholder">Đ</div>
+
+        <h1>Nguyễn Đức Đạt</h1>
+
+        <div class="tagline">
+            <span>Developer</span>
+            <span>Computer Graphics</span>
+            <span>Data Analyst</span>
+            <span>Video Editor</span>
+            <span>YouTuber</span>
+        </div>
+
+        <!-- Bio -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p class="bio">
+                Xin chào! I'm <strong>Nguyễn Đức Đạt</strong> — a Vietnamese developer passionate about
+                <strong>computer graphics</strong>, <strong>data analysis</strong>, and creative content.
+                I research and build visual computing solutions, edit videos, and run my own
+                <strong>YouTube channel</strong> where I share knowledge and creative work.
+                Always exploring the intersection of technology and art.
+            </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">C++ / C#</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">WebGL / OpenGL</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Video Editing</span>
+                <span class="skill-tag">Content Creation</span>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="section">
+            <h2>Contact Me</h2>
+            <div class="contact-grid">
+                <a class="contact-card" href="mailto:nguyenducdat298@gmail.com">
+                    <div class="icon">✉️</div>
+                    <div class="value">Email</div>
+                    <div class="label">nguyenducdat298@gmail.com</div>
+                </a>
+
+                <a class="contact-card" href="https://www.facebook.com/profile.php?id=61586359562366" target="_blank" rel="noopener">
+                    <div class="icon">📘</div>
+                    <div class="value">Facebook</div>
+                    <div class="label">@nguyenducdat</div>
+                </a>
+
+                <a class="contact-card" href="https://www.tiktok.com/@evernerd" target="_blank" rel="noopener">
+                    <div class="icon">🎵</div>
+                    <div class="value">TikTok</div>
+                    <div class="label">@evernerd</div>
+                </a>
+
+                <a class="contact-card" href="https://www.youtube.com/@Evernerd29" target="_blank" rel="noopener">
+                    <div class="icon">▶️</div>
+                    <div class="value">YouTube</div>
+                    <div class="label">@Evernerd29</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Nguyen Duc Dat. Built with passion.
+        </div>
+    </div>
+
+    <!-- Simple particle effect -->
+    <script>
+        (function() {
+            const canvas = document.createElement('canvas');
+            canvas.id = 'particles-canvas';
+            document.getElementById('particles').appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const COUNT = 80;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            for (let i = 0; i < COUNT; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.8,
+                    vy: (Math.random() - 0.5) * 0.8,
+                    r: Math.random() * 2 + 1,
+                    a: Math.random() * 0.4 + 0.2
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#00d2ff';
+                for (const p of particles) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                    ctx.globalAlpha = p.a;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+    </script>
+</body>
+</html>
