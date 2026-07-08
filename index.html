@@ -1,36 +1,71 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đồng Code - Blender & miHoYo Shaders</title>
+    <title>Nguyen Duc Dat - Portfolio</title>
+
+    <!-- Google AdSense (replace with your own publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <!-- Monetag Ad Script -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="257491" async data-cfasync="false"></script>
+
+    <!-- Google Font: Inter (similar to Bahnschrift) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Bahnschrift', 'Inter', 'Segoe UI', sans-serif;
+            font-family: 'Bahnschrift', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #130f26;
             color: #ffffff;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             padding: 2rem;
-            margin: 0 auto;
-        }
-
-        .hero {
             text-align: center;
-            padding: 3rem 0;
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
+        /* Avatar */
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid #f72585;
+            object-fit: cover;
+            margin: 2rem auto 1.5rem;
+            display: block;
+            background: rgba(255,255,255,0.05);
+            padding: 4px;
+        }
+
+        .avatar-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid #f72585;
+            margin: 2rem auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+            background: rgba(255,255,255,0.05);
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2.8rem;
             font-weight: 700;
             background: linear-gradient(to right, #f72585, #4cc9f0);
             -webkit-background-clip: text;
@@ -39,295 +74,310 @@
             margin-bottom: 0.5rem;
         }
 
-        .hero p {
-            font-size: 1.1rem;
-            color: #8888aa;
+        .tagline {
+            font-size: 1.2rem;
+            color: #4cc9f0;
+            margin-bottom: 2rem;
+            line-height: 1.8;
         }
 
+        .tagline span {
+            display: inline-block;
+            background: rgba(247,37,133,0.15);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin: 0.2rem;
+            border: 1px solid rgba(247,37,133,0.4);
+            font-size: 0.9rem;
+            color: #f72585;
+        }
+
+        /* Section */
         .section {
             background: rgba(247,37,133,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
             border: 1px solid rgba(247,37,133,0.2);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
         }
 
         .section h2 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             color: #f72585;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0.8rem;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            background: rgba(76,201,240,0.08);
-            border: 1px solid rgba(76,201,240,0.2);
-            border-radius: 10px;
-            padding: 0.8rem 1rem;
-            text-decoration: none;
-            color: #ffffff;
-            transition: all 0.3s;
-        }
-
-        .social-link:hover {
-            background: rgba(247,37,133,0.15);
-            border-color: #f72585;
-            transform: translateY(-2px);
-        }
-
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-            fill: #4cc9f0;
-            flex-shrink: 0;
-        }
-
-        .social-link:hover svg {
-            fill: #f72585;
-        }
-
-        .social-link span {
-            font-size: 0.9rem;
-            word-break: break-all;
-        }
-
-        .link-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .link-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            background: rgba(76,201,240,0.08);
-            border: 1px solid rgba(76,201,240,0.2);
-            border-radius: 10px;
-            padding: 0.8rem 1rem;
-            text-decoration: none;
-            color: #ffffff;
-            transition: all 0.3s;
-        }
-
-        .link-item:hover {
-            background: rgba(247,37,133,0.15);
-            border-color: #f72585;
-            transform: translateY(-2px);
-        }
-
-        .link-item svg {
-            width: 20px;
-            height: 20px;
-            fill: #4cc9f0;
-            flex-shrink: 0;
-        }
-
-        .link-item:hover svg {
-            fill: #f72585;
-        }
-
-        .link-item .link-text {
-            font-size: 0.9rem;
-        }
-
-        .link-item .link-label {
-            font-size: 0.75rem;
-            color: #8888aa;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.6rem 1rem;
-            background: rgba(76,201,240,0.05);
-            border-radius: 8px;
-        }
-
-        .timeline-time {
-            font-weight: 700;
-            color: #4cc9f0;
-            min-width: 50px;
-            font-size: 0.9rem;
-        }
-
-        .timeline-desc {
-            font-size: 0.9rem;
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.9;
             color: #d0d0e8;
         }
 
-        .important-box {
-            background: rgba(247,37,133,0.1);
-            border: 1px solid rgba(247,37,133,0.4);
-            border-radius: 12px;
-            padding: 1.2rem;
+        /* Contact Links */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
             margin-top: 1rem;
         }
 
-        .important-box h3 {
-            color: #f72585;
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .important-box p {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: #d0d0e8;
-        }
-
-        .important-box a {
-            color: #4cc9f0;
+        .contact-card {
+            background: rgba(76,201,240,0.05);
+            border-radius: 14px;
+            padding: 1.2rem 0.8rem;
             text-decoration: none;
-            word-break: break-all;
+            color: #fff;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(76,201,240,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .important-box a:hover {
-            color: #f72585;
+        .contact-card:hover {
+            transform: translateY(-4px);
+            background: rgba(247,37,133,0.15);
+            border-color: #f72585;
+            box-shadow: 0 8px 25px rgba(247,37,133,0.2);
         }
 
-        .footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: #555;
+        .contact-card .icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .contact-card .icon svg {
+            width: 100%;
+            height: 100%;
+            fill: #4cc9f0;
+        }
+
+        .contact-card:hover .icon svg {
+            fill: #f72585;
+        }
+
+        .contact-card .label {
             font-size: 0.85rem;
-            border-top: 1px solid rgba(247,37,133,0.1);
+            color: #8888aa;
+        }
+
+        .contact-card .value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            word-break: break-all;
+            color: #ffffff;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(76,201,240,0.1);
+            border: 1px solid rgba(76,201,240,0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: #4cc9f0;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(247,37,133,0.2);
+            border-color: #f72585;
+            color: #f72585;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
             margin-top: 2rem;
+            padding: 1.5rem;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(247,37,133,0.15);
+            width: 100%;
+        }
+
+        /* Particles / background effect */
+        #particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
 
         @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
+            h1 { font-size: 2rem; }
             .container { padding: 1rem; }
-            .social-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
+    <!-- Monetag Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(function(reg) {
+                    console.log('Monetag SW registered');
+                })
+                .catch(function(err) {
+                    console.log('Monetag SW failed:', err);
+                });
+        }
+    </script>
+
+    <div id="particles"></div>
+
     <div class="container">
-        <div class="hero">
-            <h1>Đồng Code</h1>
-            <p>Blender Tools & miHoYo Shaders</p>
+        <!-- Avatar Placeholder (replace with your image) -->
+        <div class="avatar-placeholder">Đ</div>
+
+        <h1>Nguyễn Đức Đạt</h1>
+
+        <div class="tagline">
+            <span>Developer</span>
+            <span>Computer Graphics</span>
+            <span>Data Analyst</span>
+            <span>Video Editor</span>
+            <span>YouTuber</span>
         </div>
 
-        <!-- Video Timeline -->
+        <!-- Bio -->
         <div class="section">
-            <h2>Video Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-time">0:00</span>
-                    <span class="timeline-desc">Video</span>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-time">3:26</span>
-                    <span class="timeline-desc">Quảng Cáo</span>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-time">3:45</span>
-                    <span class="timeline-desc">Video</span>
-                </div>
-            </div>
+            <h2>About Me</h2>
+            <p class="bio">
+                Xin chào! I'm <strong>Nguyễn Đức Đạt</strong> — a Vietnamese developer passionate about
+                <strong>computer graphics</strong>, <strong>data analysis</strong>, and creative content.
+                I research and build visual computing solutions, edit videos, and run my own
+                <strong>YouTube channel</strong> where I share knowledge and creative work.
+                Always exploring the intersection of technology and art.
+            </p>
         </div>
 
-        <!-- Links -->
+        <!-- Skills -->
         <div class="section">
-            <h2>Links</h2>
-            <div class="link-list">
-                <a class="link-item" href="https://cdn.hoyotoon.com/s/assets" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                    <div>
-                        <div class="link-text">Model Assets</div>
-                        <div class="link-label">cdn.hoyotoon.com/s/assets</div>
-                    </div>
-                </a>
-                <a class="link-item" href="https://github.com/festivities/Blender-StellarToon" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    <div>
-                        <div class="link-text">Stellar Toon</div>
-                        <div class="link-label">GitHub - Blender StellarToon</div>
-                    </div>
-                </a>
-                <a class="link-item" href="https://github.com/michael-gh1/Addons-And-Tools-For-Blender-miHoYo-Shaders/releases" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                    <div>
-                        <div class="link-text">Addon (tải bản standalone)</div>
-                        <div class="link-label">Addons-And-Tools-For-Blender-miHoYo-Shaders</div>
-                    </div>
-                </a>
-                <a class="link-item" href="https://discord.gg/omatsuri-894925535870865498" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                    <div>
-                        <div class="link-text">Goo Engine Discord</div>
-                        <div class="link-label">discord.gg/omatsuri</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Important -->
-        <div class="section">
-            <h2>Important</h2>
-            <div class="important-box">
-                <h3>Lưu ý quan trọng</h3>
-                <p>
-                    Ngoài ra bạn còn phải cài <strong>BetterFBX 5.4.8</strong> và <strong>Rigify</strong> để có thể tự rig được nhân vật.
-                </p>
-                <p style="margin-top: 0.8rem;">
-                    Link Goo Engine: <a href="https://discord.gg/omatsuri-894925535870865498" target="_blank" rel="noopener">discord.gg/omatsuri-894925535870865498</a>
-                </p>
-                <p style="margin-top: 0.5rem; color: #aaa;">
-                    Bạn vô discord này rồi vô kênh sharing sẽ có 1 thread binary của Goo Engine, BetterFBX 5.4.8 và nếu bạn có thắc mắc gì có thể hỏi người trong này.
-                </p>
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">C++ / C#</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">WebGL / OpenGL</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Video Editing</span>
+                <span class="skill-tag">Blender / 3D Animation</span>
+                <span class="skill-tag">Content Creation</span>
             </div>
         </div>
 
         <!-- Contact -->
         <div class="section">
-            <h2>Contact</h2>
-            <div class="social-grid">
-                <a class="social-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=furama0068@gmail.com" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    <span>Email</span>
+            <h2>Contact Me</h2>
+            <div class="contact-grid">
+                <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyenducdat298@gmail.com" target="_blank" rel="noopener">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <div class="value">Email</div>
+                    <div class="label">nguyenducdat298@gmail.com</div>
                 </a>
-                <a class="social-link" href="https://www.facebook.com/profile.php?id=61586359562366" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    <span>Facebook</span>
+
+                <a class="contact-card" href="https://www.facebook.com/profile.php?id=61586359562366" target="_blank" rel="noopener">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                    <div class="value">Facebook</div>
+                    <div class="label">@nguyenducdat</div>
                 </a>
-                <a class="social-link" href="https://discord.gg/NUPG6Gyb2C" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                    <span>Discord</span>
+
+                <a class="contact-card" href="https://www.tiktok.com/@evernerd" target="_blank" rel="noopener">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                        </svg>
+                    </div>
+                    <div class="value">TikTok</div>
+                    <div class="label">@evernerd</div>
                 </a>
-                <a class="social-link" href="https://www.tiktok.com/@dong_code" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-                    <span>TikTok</span>
-                </a>
-                <a class="social-link" href="https://www.youtube.com/@%C4%90%E1%BB%99ng_Code" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    <span>YouTube</span>
+
+                <a class="contact-card" href="https://www.youtube.com/@Evernerd29" target="_blank" rel="noopener">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </div>
+                    <div class="value">YouTube</div>
+                    <div class="label">@Evernerd29</div>
                 </a>
             </div>
         </div>
 
         <div class="footer">
-            &copy; 2026 Đồng Code. Built with Blender.
+            &copy; 2026 Nguyen Duc Dat. Built with passion.
         </div>
     </div>
+
+    <!-- Simple particle effect -->
+    <script>
+        (function() {
+            const canvas = document.createElement('canvas');
+            canvas.id = 'particles-canvas';
+            document.getElementById('particles').appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const COUNT = 80;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const colors = ['#f72585', '#4cc9f0'];
+            for (let i = 0; i < COUNT; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.8,
+                    vy: (Math.random() - 0.5) * 0.8,
+                    r: Math.random() * 2 + 1,
+                    a: Math.random() * 0.4 + 0.2,
+                    color: colors[Math.floor(Math.random() * colors.length)]
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (const p of particles) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                    ctx.globalAlpha = p.a;
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+    </script>
 </body>
 </html>
