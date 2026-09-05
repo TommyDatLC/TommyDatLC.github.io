@@ -310,11 +310,18 @@
 
         (function() {
             var saved = localStorage.getItem('lang');
-            if (!saved) {
-                var vi = navigator.language || navigator.userLanguage || '';
-                saved = vi.toLowerCase().startsWith('vi') ? 'vi' : 'en';
+            if (saved) { setLang(saved); }
+            else {
+                var fb = navigator.language || navigator.userLanguage || '';
+                setLang(fb.toLowerCase().startsWith('vi') ? 'vi' : 'en');
+                fetch('https://ipapi.co/country_code/')
+                    .then(function(r) { return r.ok ? r.text() : ''; })
+                    .then(function(cc) {
+                        cc = (cc || '').trim().toUpperCase();
+                        if (cc) setLang(cc === 'VN' ? 'vi' : 'en');
+                    })
+                    .catch(function() {});
             }
-            setLang(saved);
 
             var canvas = document.createElement('canvas');
             canvas.id = 'particles-canvas';

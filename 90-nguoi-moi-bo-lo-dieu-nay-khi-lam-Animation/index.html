@@ -306,11 +306,18 @@
 
         (function() {
             var saved = localStorage.getItem('lang');
-            if (!saved) {
-                var lang = navigator.language || navigator.userLanguage || '';
-                saved = lang.toLowerCase().startsWith('vi') ? 'vi' : 'en';
+            if (saved) { setLang(saved); return; }
+            function detectFallback() {
+                var l = navigator.language || navigator.userLanguage || '';
+                return l.toLowerCase().startsWith('vi') ? 'vi' : 'en';
             }
-            setLang(saved);
+            fetch('https://ipapi.co/country_code/')
+                .then(function(r) { return r.ok ? r.text() : ''; })
+                .then(function(cc) {
+                    cc = (cc || '').trim().toUpperCase();
+                    setLang(cc ? (cc === 'VN' ? 'vi' : 'en') : detectFallback());
+                })
+                .catch(function() { setLang(detectFallback()); });
         })();
     </script>
 </body>
