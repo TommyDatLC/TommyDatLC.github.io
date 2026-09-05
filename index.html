@@ -28,7 +28,7 @@
             z-index: 100;
             background: rgba(19,15,38,0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(247,37,133,0.2);
+            border-bottom: 1px solid rgba(255,0,0,0.2);
             padding: 0.8rem 2rem;
             display: flex;
             justify-content: flex-end;
@@ -53,8 +53,8 @@
         }
 
         .lang-btn.active {
-            background: #f72585;
-            border-color: #f72585;
+            background: #ff0000;
+            border-color: #ff0000;
             color: #fff;
         }
 
@@ -71,7 +71,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 3px solid #f72585;
+            border: 3px solid #ff0000;
             margin: 2rem auto 1.5rem;
             display: flex;
             align-items: center;
@@ -85,7 +85,7 @@
         h1 {
             font-size: 2.8rem;
             font-weight: 700;
-            background: linear-gradient(to right, #f72585, #4cc9f0);
+            background: linear-gradient(to right, #ff0000, #4cc9f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -101,29 +101,29 @@
 
         .tagline span {
             display: inline-block;
-            background: rgba(247,37,133,0.15);
+            background: rgba(255,0,0,0.15);
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
             margin: 0.2rem;
-            border: 1px solid rgba(247,37,133,0.4);
+            border: 1px solid rgba(255,0,0,0.4);
             font-size: 0.9rem;
-            color: #f72585;
+            color: #ff0000;
         }
 
         .section {
-            background: rgba(247,37,133,0.05);
+            background: rgba(255,0,0,0.05);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2rem;
-            border: 1px solid rgba(247,37,133,0.2);
+            border: 1px solid rgba(255,0,0,0.2);
             text-align: left;
         }
 
         .section h2 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: #f72585;
+            color: #ff0000;
             text-align: center;
         }
 
@@ -158,14 +158,14 @@
 
         .contact-card:hover {
             transform: translateY(-4px);
-            background: rgba(247,37,133,0.15);
-            border-color: #f72585;
-            box-shadow: 0 8px 25px rgba(247,37,133,0.2);
+            background: rgba(255,0,0,0.15);
+            border-color: #ff0000;
+            box-shadow: 0 8px 25px rgba(255,0,0,0.2);
         }
 
         .contact-card .icon { width: 36px; height: 36px; }
         .contact-card .icon svg { width: 100%; height: 100%; fill: #4cc9f0; }
-        .contact-card:hover .icon svg { fill: #f72585; }
+        .contact-card:hover .icon svg { fill: #ff0000; }
         .contact-card .label { font-size: 0.85rem; color: #8888aa; }
         .contact-card .value { font-size: 0.9rem; font-weight: 600; word-break: break-word; color: #ffffff; }
 
@@ -187,9 +187,9 @@
         }
 
         .skill-tag:hover {
-            background: rgba(247,37,133,0.2);
-            border-color: #f72585;
-            color: #f72585;
+            background: rgba(255,0,0,0.2);
+            border-color: #ff0000;
+            color: #ff0000;
             transform: scale(1.05);
         }
 
@@ -198,7 +198,7 @@
             padding: 1.5rem;
             color: #666;
             font-size: 0.85rem;
-            border-top: 1px solid rgba(247,37,133,0.15);
+            border-top: 1px solid rgba(255,0,0,0.15);
             width: 100%;
             text-align: center;
         }
@@ -325,7 +325,7 @@
             function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
             resize();
             window.addEventListener('resize', resize);
-            var colors = ['#f72585', '#4cc9f0'];
+            var colors = ['#ff0000', '#4cc9f0'];
             for (var i = 0; i < COUNT; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
