@@ -1,6 +1,7 @@
 import React from 'react';
 import RetroNavbar from './components/RetroNavbar';
 import HeroConsole from './components/HeroConsole';
+import ProductDrops from './components/ProductDrops';
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <RetroNavbar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <HeroConsole />
+        <ProductDrops />
       </main>
     </div>
   );
