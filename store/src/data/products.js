@@ -1,6 +1,6 @@
 export const STORE_CONFIG = {
   storeName: "EVERNERD // AI DROP STORE",
-  version: "v1.2.0",
+  version: "v1.3.0",
   author: "Nguyễn Đức Đạt (Evernerd)",
   discordUrl: "https://discord.gg/DqPe8dnAMP",
   zaloUrl: "https://zalo.me/0968940842",
@@ -10,8 +10,8 @@ export const STORE_CONFIG = {
 
 export const PRODUCT_CATEGORIES = [
   { id: "all", nameVi: "TẤT CẢ DROPS", nameEn: "ALL DROPS", icon: "Boxes" },
-  { id: "chatgpt", nameVi: "CHATGPT ECOSYSTEM", nameEn: "CHATGPT ECOSYSTEM", icon: "Bot" },
-  { id: "claude", nameVi: "CLAUDE ECOSYSTEM", nameEn: "CLAUDE ECOSYSTEM", icon: "Sparkles" },
+  { id: "chatgpt", nameVi: "CHATGPT (o1 / o3 / GPT-4o)", nameEn: "CHATGPT (o1 / o3 / GPT-4o)", icon: "Bot" },
+  { id: "claude", nameVi: "CLAUDE (3.7 SONNET)", nameEn: "CLAUDE (3.7 SONNET)", icon: "Sparkles" },
   { id: "combo", nameVi: "COMBO TIẾT KIỆM", nameEn: "VALUE COMBOS", icon: "Zap" },
 ];
 
@@ -24,8 +24,8 @@ export const PRODUCTS = [
       en: "ChatGPT Plus (Personal Email)"
     },
     tagline: {
-      vi: "Kích hoạt trực tiếp trên email cá nhân của bạn",
-      en: "Direct activation on your private personal email"
+      vi: "Mô hình tư duy OpenAI o1, o3-mini & GPT-4o Canvas chính chủ",
+      en: "OpenAI o1, o3-mini deep reasoning & GPT-4o on personal email"
     },
     badge: {
       vi: "HOT DROP",
@@ -41,24 +41,24 @@ export const PRODUCTS = [
     },
     features: {
       vi: [
-        "Truy cập không giới hạn GPT-4o, Canvas & o1-preview",
-        "Kích hoạt chính chủ 100% trên email cá nhân của bạn",
-        "Tính năng Advanced Voice tương tác giọng nói siêu thực",
-        "Sáng tạo hình ảnh đỉnh cao cùng DALL-E 3 & Custom GPTs",
+        "Mô hình tư duy chuyên sâu OpenAI o1 & o3-mini giải toán, lập trình đỉnh cao",
+        "Truy cập không giới hạn GPT-4o, giao diện soạn thảo Canvas & SearchGPT",
+        "Tính năng Advanced Voice đàm thoại giọng nói siêu thực đa ngữ",
+        "Kích hoạt chính chủ 100% trên email cá nhân, giữ trọn lịch sử chat",
         "Bảo hành 1-đổi-1 trọn gói 30 ngày sử dụng"
       ],
       en: [
-        "Unlimited access to GPT-4o, Canvas & OpenAI o1-preview",
-        "100% official activation on your personal email",
-        "Ultra-realistic Advanced Voice Mode interactions",
-        "High-definition image generation via DALL-E 3 & Custom GPTs",
+        "Deep reasoning with OpenAI o1 & o3-mini for complex coding and logic",
+        "Full access to GPT-4o multimodal, interactive Canvas & SearchGPT",
+        "Ultra-realistic natural speech via Advanced Voice Mode",
+        "100% official activation on your personal email, zero chat loss",
         "Full 1-to-1 replacement warranty for 30 days"
       ]
     },
     discordQuery: "order_chatgpt_plus",
     zaloQuery: {
-      vi: "Tôi muốn mua gói ChatGPT Plus Chính Chủ",
-      en: "I would like to order ChatGPT Plus Personal Plan"
+      vi: "Tôi muốn mua gói ChatGPT Plus Chính Chủ (o1 & GPT-4o)",
+      en: "I would like to order ChatGPT Plus Personal Plan (o1 & GPT-4o)"
     },
     stock: "IN_STOCK",
     deliveryTime: {
@@ -74,8 +74,8 @@ export const PRODUCTS = [
       en: "ChatGPT Team (Dedicated Slot)"
     },
     tagline: {
-      vi: "Hạn mức tin nhắn cao gấp đôi, tiết kiệm 50%",
-      en: "2X message caps, dedicated workspace, save 50%"
+      vi: "Hạn mức o1 & GPT-4o cao gấp 2 lần, bảo mật Enterprise",
+      en: "2X higher message caps for o1 & GPT-4o, enterprise security"
     },
     badge: {
       vi: "TIẾT KIỆM",
@@ -91,24 +91,24 @@ export const PRODUCTS = [
     },
     features: {
       vi: [
-        "Hạn mức gửi tin GPT-4o cao gấp 2 lần bản Plus",
-        "Không gian làm việc bảo mật cao cấp (Workspace riêng)",
-        "Không bị train dữ liệu theo chính sách Enterprise của OpenAI",
-        "Hỗ trợ đầy đủ Code Interpreter, DALL-E 3 và Canvas",
-        "Hỗ trợ kỹ thuật 24/7 và gia hạn hàng tháng liên tục"
+        "Hạn mức gửi tin o1 & GPT-4o cao gấp 2 lần so với bản Plus thông thường",
+        "Không gian làm việc bảo mật cao cấp (Workspace riêng biệt)",
+        "Chính sách Enterprise: OpenAI cam kết không train dữ liệu trên đoạn chat",
+        "Hỗ trợ đầy đủ Code Interpreter, Advanced Data Analysis và Canvas",
+        "Hỗ trợ kỹ thuật 24/7 và gia hạn hàng tháng liên tục ổn định"
       ],
       en: [
-        "2X higher message cap for GPT-4o compared to standard Plus",
-        "Dedicated secure enterprise workspace",
-        "Zero model training on your data by OpenAI policy",
-        "Full access to Code Interpreter, DALL-E 3, and Canvas",
-        "24/7 technical assistance and seamless renewal"
+        "2X higher message limits for o1 and GPT-4o compared to standard Plus",
+        "Dedicated private enterprise workspace",
+        "Zero model training on your data backed by OpenAI enterprise policy",
+        "Full suite: Code Interpreter, Advanced Data Analysis, and Canvas",
+        "24/7 priority support and seamless continuous renewal"
       ]
     },
     discordQuery: "order_chatgpt_team",
     zaloQuery: {
-      vi: "Tôi muốn mua gói ChatGPT Team Slot Riêng",
-      en: "I would like to order ChatGPT Team Dedicated Slot"
+      vi: "Tôi muốn mua gói ChatGPT Team Slot Riêng (Hạn mức 2X)",
+      en: "I would like to order ChatGPT Team Dedicated Slot (2X Limits)"
     },
     stock: "IN_STOCK",
     deliveryTime: {
@@ -124,8 +124,8 @@ export const PRODUCTS = [
       en: "OpenAI API Key (Pre-funded)"
     },
     tagline: {
-      vi: "Cấp sẵn hạn mức số dư nạp trực tiếp cho Dev",
-      en: "Pre-loaded usage credit for developers and bots"
+      vi: "Cấp sẵn hạn mức gọi API o1, o3-mini & GPT-4o cho Dev",
+      en: "Pre-loaded API credits for o1, o3-mini & GPT-4o integrations"
     },
     badge: {
       vi: "DEV CHOICE",
@@ -141,18 +141,18 @@ export const PRODUCTS = [
     },
     features: {
       vi: [
-        "Key API sạch, kích hoạt Tier 1/Tier 2 chính quy",
-        "Tích hợp ngay vào Cursor, VS Code, Next.js, LangChain",
-        "Rate limit cao, không lo gián đoạn luồng phát triển",
-        "Tùy chọn nạp số dư linh hoạt theo nhu cầu dự án",
-        "Hướng dẫn cấu hình bảo mật key tránh rò rỉ"
+        "Cấp quyền gọi API o1, o3-mini, GPT-4o và text-embedding mới nhất",
+        "Key API sạch, kích hoạt Tier 1/Tier 2 chính quy không lo checkpoint",
+        "Tích hợp mượt mà vào Cursor, VS Code, Next.js, LangChain, n8n",
+        "Rate limit cao, không lo nghẽn request trong quy trình production",
+        "Hướng dẫn cấu hình bảo mật key tránh rò rỉ token"
       ],
       en: [
+        "Instant API access to o1, o3-mini, GPT-4o and latest embedding models",
         "Clean authentic API keys provisioned with Tier 1/2 rates",
-        "Instant plug & play with Cursor, VS Code, Next.js & LangChain",
-        "High RPM rate limits preventing pipeline throttles",
-        "Flexible credit top-ups matching project workload",
-        "Best practice security advisory for key safety"
+        "Seamless integration with Cursor, VS Code, Next.js, LangChain & n8n",
+        "High RPM rate limits preventing production pipeline throttles",
+        "Security advisory and environment variable best practices"
       ]
     },
     discordQuery: "order_openai_api",
@@ -174,8 +174,8 @@ export const PRODUCTS = [
       en: "Claude Pro (Personal Email)"
     },
     tagline: {
-      vi: "Đỉnh cao code & văn phong cùng Claude 3.5 Sonnet",
-      en: "Ultimate code synthesis & logic with Claude 3.5 Sonnet"
+      vi: "Mô hình tư duy lai Claude 3.7 Sonnet (Extended Thinking)",
+      en: "Hybrid reasoning with Claude 3.7 Sonnet & Extended Thinking"
     },
     badge: {
       vi: "BEST FOR DEV",
@@ -191,24 +191,24 @@ export const PRODUCTS = [
     },
     features: {
       vi: [
-        "Truy cập không giới hạn Claude 3.5 Sonnet & Claude 3.5 Haiku",
-        "Mở khóa tính năng Artifacts tương tác giao diện trực quan",
-        "Tạo Projects quản lý ngữ cảnh tài liệu chuyên sâu",
-        "Kích hoạt chuẩn email cá nhân, giữ trọn vẹn dữ liệu chat",
-        "Bảo hành 1-đổi-1 nhanh chóng trọn thời gian sử dụng"
+        "Trải nghiệm Claude 3.7 Sonnet với chế độ Extended Thinking (suy nghĩ chuyên sâu)",
+        "Đỉnh cao lập trình, kiến trúc hệ thống và debug codebase phức tạp",
+        "Tính năng Claude Artifacts tương tác và render trực tiếp UI/UX, code, sơ đồ",
+        "Tạo Projects quản lý ngữ cảnh tài liệu khổng lồ (200K token context)",
+        "Kích hoạt chuẩn email cá nhân, bảo hành 1-đổi-1 trọn 30 ngày"
       ],
       en: [
-        "Unlimited access to Claude 3.5 Sonnet & Claude 3.5 Haiku",
-        "Interactive UI preview with Claude Artifacts",
-        "Custom Projects for massive code repository context",
-        "Activated cleanly on your private email address",
-        "Fast 1-to-1 replacement warranty for full billing cycle"
+        "Access to Claude 3.7 Sonnet featuring adjustable Extended Thinking mode",
+        "Benchmark-topping software engineering, architecture, and deep debugging",
+        "Interactive visual canvas via Claude Artifacts for live UI & diagram previews",
+        "Custom Projects for massive code repository understanding (200K tokens)",
+        "Activated directly on your private personal email with 1-to-1 warranty"
       ]
     },
     discordQuery: "order_claude_pro",
     zaloQuery: {
-      vi: "Tôi muốn mua gói Claude Pro Chính Chủ",
-      en: "I would like to order Claude Pro Personal Plan"
+      vi: "Tôi muốn mua gói Claude Pro Chính Chủ (Claude 3.7 Sonnet)",
+      en: "I would like to order Claude Pro Personal Plan (Claude 3.7 Sonnet)"
     },
     stock: "IN_STOCK",
     deliveryTime: {
@@ -224,8 +224,8 @@ export const PRODUCTS = [
       en: "Claude Team (Workspace Slot)"
     },
     tagline: {
-      vi: "Gói mở rộng cho team & lập trình viên chuyên nghiệp",
-      en: "Expanded limits for teams & professional developers"
+      vi: "Hạn mức Claude 3.7 Sonnet mở rộng cho Dev & Team chuyên nghiệp",
+      en: "Expanded Claude 3.7 Sonnet limits for devs & engineering teams"
     },
     badge: {
       vi: "DEV CHOICE",
@@ -241,24 +241,24 @@ export const PRODUCTS = [
     },
     features: {
       vi: [
-        "Hạn mức sử dụng cao hơn Claude Pro thông thường",
-        "Chia sẻ không gian làm việc Projects với bộ nhớ lớn",
-        "Khả năng phân tích tài liệu và mã nguồn phức tạp",
-        "Cam kết tài khoản sạch, ổn định không khóa bất thường",
-        "Hỗ trợ kỹ thuật cấu hình trực tiếp từ lập trình viên"
+        "Hạn mức gửi tin Claude 3.7 Sonnet cao hơn đáng kể so với bản Pro cá nhân",
+        "Sử dụng chế độ Extended Thinking mà không lo nhanh hết quota tin nhắn",
+        "Chia sẻ không gian Team Projects với kho tài liệu và prompt chung của nhóm",
+        "Cam kết tài khoản sạch chuẩn Enterprise, ổn định không khóa bất thường",
+        "Hỗ trợ kỹ thuật cấu hình trực tiếp từ kỹ sư phần mềm (Evernerd)"
       ],
       en: [
-        "Significantly higher message quotas than standard Pro",
-        "Shared Team Projects workspace with deep memory buffer",
-        "Superior long-context codebase understanding",
-        "Zero bans, enterprise-grade account stability",
-        "Direct software engineer setup assistance"
+        "Significantly higher message quotas for Claude 3.7 Sonnet than Pro",
+        "Heavy use of Extended Thinking without rapid quota exhaustion",
+        "Shared Team Projects for collective codebases, docs, and prompts",
+        "Enterprise-grade stability, zero sudden bans or security blocks",
+        "Direct technical guidance from software engineer (Evernerd)"
       ]
     },
     discordQuery: "order_claude_team",
     zaloQuery: {
-      vi: "Tôi muốn mua gói Claude Team Workspace",
-      en: "I would like to order Claude Team Workspace Slot"
+      vi: "Tôi muốn mua gói Claude Team Workspace (Claude 3.7)",
+      en: "I would like to order Claude Team Workspace Slot (Claude 3.7)"
     },
     stock: "IN_STOCK",
     deliveryTime: {
@@ -274,8 +274,8 @@ export const PRODUCTS = [
       en: "The AI Titan Combo (GPT + Claude)"
     },
     tagline: {
-      vi: "ChatGPT Plus + Claude Pro (Cặp đôi hoàn hảo)",
-      en: "ChatGPT Plus & Claude Pro bundle (Ultimate Productivity)"
+      vi: "ChatGPT Plus (o1/o3) + Claude Pro (3.7 Sonnet) - Cặp đôi tối thượng",
+      en: "ChatGPT Plus (o1/o3) & Claude Pro (3.7 Sonnet) - Ultimate Power"
     },
     badge: {
       vi: "SIÊU COMBO",
@@ -291,24 +291,24 @@ export const PRODUCTS = [
     },
     features: {
       vi: [
-        "Bao gồm trọn bộ 1 tài khoản ChatGPT Plus & 1 Claude Pro",
-        "Tối ưu toàn diện: Claude hỗ trợ code đỉnh cao + GPT-4o voice & ảnh",
-        "Tiết kiệm ngay 310.000đ so với giá gốc mua lẻ",
-        "Được tặng kèm bộ prompt lập trình & phân tích dữ liệu độc quyền",
-        "Ưu tiên hỗ trợ kỹ thuật VIP 1-kèm-1 qua Discord & Zalo"
+        "Bao gồm trọn bộ 1 tài khoản ChatGPT Plus & 1 tài khoản Claude Pro chính chủ",
+        "Song kiếm hợp bích: Claude 3.7 Sonnet (Extended Thinking) + OpenAI o1 & GPT-4o Voice",
+        "Tiết kiệm ngay 310.000đ so với giá mua lẻ từng gói",
+        "Tặng kèm bộ prompt lập trình full-stack, Cursor rules và system prompts độc quyền",
+        "Ưu tiên hỗ trợ kỹ thuật VIP 1-kèm-1 trực tiếp qua Discord & Zalo"
       ],
       en: [
-        "Includes 1 full ChatGPT Plus & 1 Claude Pro account",
-        "Complete coverage: Claude for deep coding + GPT-4o voice & vision",
+        "Includes 1 full ChatGPT Plus & 1 Claude Pro personal account",
+        "Dual supremacy: Claude 3.7 Sonnet Extended Thinking + OpenAI o1 & GPT-4o Voice",
         "Save 310.000 VND ($12+) compared to purchasing separately",
-        "Complimentary VIP coding & data analyst prompt library",
-        "Priority 1-on-1 VIP engineer support via Discord & chat"
+        "Complimentary full-stack dev prompts, Cursor rules & system prompt packs",
+        "Priority 1-on-1 VIP engineer support via Discord & private chat"
       ]
     },
     discordQuery: "order_combo_titan",
     zaloQuery: {
-      vi: "Tôi muốn mua Combo Song Kiếm Hợp Bích (ChatGPT + Claude)",
-      en: "I would like to order The AI Titan Combo (ChatGPT + Claude)"
+      vi: "Tôi muốn mua Combo Song Kiếm Hợp Bích (ChatGPT Plus + Claude Pro)",
+      en: "I would like to order The AI Titan Combo (ChatGPT Plus + Claude Pro)"
     },
     stock: "IN_STOCK",
     deliveryTime: {

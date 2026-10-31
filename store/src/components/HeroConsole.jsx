@@ -12,12 +12,12 @@ export default function HeroConsole() {
 
   const characterQuotes = lang === 'vi' ? [
     "Chào bạn! Mình là E9, trợ lý của Evernerd ✨",
-    "Cần ChatGPT Plus hay Claude Pro? Có hàng ngay nhé!",
+    "Cần ChatGPT Plus (o1/o3-mini) hay Claude 3.7 Sonnet? Có hàng ngay nhé!",
     "Kích hoạt chính chủ email cá nhân, bảo hành 1-đổi-1!",
     "Bấm vào mình hoặc kéo xuống để xem chi tiết các gói nhé!"
   ] : [
     "Hey there! I'm E9, your Evernerd AI Store companion ✨",
-    "Need official ChatGPT Plus or Claude Pro? Instant delivery!",
+    "Need official ChatGPT Plus (o1/o3) or Claude 3.7 Sonnet? Instant delivery!",
     "100% private email activation with full 1-to-1 warranty!",
     "Click me or scroll down to explore all account drops!"
   ];
@@ -163,20 +163,9 @@ export default function HeroConsole() {
               style={{ imageRendering: 'pixelated' }}
             />
 
-            {/* Glowing Retro Platform / Pedestal */}
-            <div className="relative -mt-6 z-20 flex flex-col items-center">
-              {/* Elliptical glow */}
-              <div className="w-48 h-6 bg-gradient-to-r from-transparent via-retro-gold/50 to-transparent rounded-full blur-sm"></div>
-              {/* Platform base */}
-              <div className="px-4 py-1.5 bg-[#170e28] border-2 border-retro-gold/70 rounded-full shadow-pixel flex items-center gap-2 -mt-2">
-                <span className="w-2 h-2 rounded-full bg-retro-gold animate-pulse"></span>
-                <span className="font-pixel text-xs sm:text-sm text-retro-gold tracking-wider">
-                  MASCOT // E9 [8-BIT]
-                </span>
-                <span className="text-[10px] text-purple-300 font-mono">
-                  {clickCount > 0 ? `♥ ${clickCount}` : 'LVL.99'}
-                </span>
-              </div>
+            {/* Soft Ambient Platform Glow */}
+            <div className="relative -mt-4 z-20 flex flex-col items-center pointer-events-none">
+              <div className="w-44 h-4 bg-gradient-to-r from-transparent via-retro-gold/40 to-transparent rounded-full blur-sm"></div>
             </div>
 
           </div>

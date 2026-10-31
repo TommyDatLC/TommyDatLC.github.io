@@ -31,8 +31,8 @@ export const TRANSLATIONS = {
       consoleFooter: "PHIÊN BẢN ĐẶC BIỆT TÍM VÀNG",
       messages: [
         "KHỞI ĐỘNG HỆ THỐNG // 2026_AI_DROPS_SẴN_SÀNG",
-        "OPENAI GPT-4o & o1-PREVIEW ĐÃ SẴN SÀNG",
-        "ANTHROPIC CLAUDE 3.5 SONNET ĐÃ KÍCH HOẠT",
+        "OPENAI o1, o3-MINI & GPT-4o ĐÃ SẴN SÀNG",
+        "ANTHROPIC CLAUDE 3.7 SONNET ĐÃ KÍCH HOẠT",
         "NÂNG CẤP TRÍ TUỆ & TỐC ĐỘ LÀM VIỆC NGAY"
       ]
     },
@@ -88,7 +88,7 @@ export const TRANSLATIONS = {
         },
         {
           q: "Tôi nên chọn ChatGPT Plus hay Claude Pro cho công việc lập trình?",
-          a: "Nếu bạn tập trung cao độ vào viết code, debug và phân tích codebase lớn, Claude 3.5 Sonnet là số 1 hiện nay. Nếu bạn cần đa nhiệm (giọng nói, phân tích hình ảnh, tạo ảnh DALL-E, Canvas), ChatGPT Plus rất toàn diện. Với các bạn muốn làm việc tối ưu nhất, gói Combo Song Kiếm Hợp Bích là sự lựa chọn hoàn hảo."
+          a: "Nếu bạn tập trung cao độ vào viết code, kiến trúc hệ thống và debug codebase phức tạp, Claude 3.7 Sonnet với chế độ Extended Thinking là số 1 thế giới hiện nay. Nếu bạn cần mô hình tư duy logic toán học o1/o3-mini kết hợp đa phương thức (giọng nói siêu thực, vẽ ảnh DALL-E, Canvas), ChatGPT Plus rất toàn diện. Với các bạn muốn làm việc tối ưu nhất, gói Combo Song Kiếm Hợp Bích là sự lựa chọn hoàn hảo."
         },
         {
           q: "Quy trình đặt hàng 1-click hoạt động thế nào?",
@@ -134,8 +134,8 @@ export const TRANSLATIONS = {
       consoleFooter: "PURPLE & GOLD SPECIAL DROP",
       messages: [
         "BOOT SEQUENCE // 2026_AI_DROPS_READY",
-        "OPENAI GPT-4o & o1-PREVIEW ONLINE",
-        "ANTHROPIC CLAUDE 3.5 SONNET LOADED",
+        "OPENAI o1, o3-MINI & GPT-4o ONLINE",
+        "ANTHROPIC CLAUDE 3.7 SONNET LOADED",
         "UPGRADE YOUR BRAIN & WORKFLOW NOW"
       ]
     },
@@ -191,7 +191,7 @@ export const TRANSLATIONS = {
         },
         {
           q: "Should I choose ChatGPT Plus or Claude Pro for programming?",
-          a: "If you prioritize deep code synthesis, architecture analysis, and massive context reasoning, Claude 3.5 Sonnet is unmatched. For multimodal work (voice, vision, DALL-E, Canvas), ChatGPT Plus is unbeatable. The Titan Combo offers the best of both worlds."
+          a: "If you prioritize deep software engineering, system architecture, and massive context reasoning, Claude 3.7 Sonnet with Extended Thinking is unmatched worldwide. For deep logic with OpenAI o1/o3-mini combined with voice, vision, and Canvas, ChatGPT Plus is extraordinary. The Titan Combo offers the best of both worlds."
         },
         {
           q: "How does the 1-click order workflow operate?",
