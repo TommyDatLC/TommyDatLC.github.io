@@ -4,6 +4,7 @@ import HeroConsole from './components/HeroConsole';
 import ProductDrops from './components/ProductDrops';
 import WarrantySpecs from './components/WarrantySpecs';
 import FaqTerminal from './components/FaqTerminal';
+import RetroFooter from './components/RetroFooter';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <WarrantySpecs />
         <FaqTerminal />
       </main>
+      <RetroFooter />
     </div>
   );
 }

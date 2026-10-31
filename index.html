@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5397126329004184" crossorigin="anonymous"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,6 +16,7 @@
             background: #130f26;
             color: #ffffff;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* Language Header */
@@ -26,7 +28,7 @@
             z-index: 100;
             background: rgba(19,15,38,0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(247,37,133,0.2);
+            border-bottom: 1px solid rgba(255,0,0,0.2);
             padding: 0.8rem 2rem;
             display: flex;
             justify-content: flex-end;
@@ -51,8 +53,8 @@
         }
 
         .lang-btn.active {
-            background: #f72585;
-            border-color: #f72585;
+            background: #ff0000;
+            border-color: #ff0000;
             color: #fff;
         }
 
@@ -69,7 +71,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 3px solid #f72585;
+            border: 3px solid #ff0000;
             margin: 2rem auto 1.5rem;
             display: flex;
             align-items: center;
@@ -83,7 +85,7 @@
         h1 {
             font-size: 2.8rem;
             font-weight: 700;
-            background: linear-gradient(to right, #f72585, #4cc9f0);
+            background: linear-gradient(to right, #ff0000, #4cc9f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -99,29 +101,29 @@
 
         .tagline span {
             display: inline-block;
-            background: rgba(247,37,133,0.15);
+            background: rgba(255,0,0,0.15);
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
             margin: 0.2rem;
-            border: 1px solid rgba(247,37,133,0.4);
+            border: 1px solid rgba(255,0,0,0.4);
             font-size: 0.9rem;
-            color: #f72585;
+            color: #ff0000;
         }
 
         .section {
-            background: rgba(247,37,133,0.05);
+            background: rgba(255,0,0,0.05);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2rem;
-            border: 1px solid rgba(247,37,133,0.2);
+            border: 1px solid rgba(255,0,0,0.2);
             text-align: left;
         }
 
         .section h2 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: #f72585;
+            color: #ff0000;
             text-align: center;
         }
 
@@ -150,20 +152,22 @@
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
+            overflow: hidden;
+            text-align: center;
         }
 
         .contact-card:hover {
             transform: translateY(-4px);
-            background: rgba(247,37,133,0.15);
-            border-color: #f72585;
-            box-shadow: 0 8px 25px rgba(247,37,133,0.2);
+            background: rgba(255,0,0,0.15);
+            border-color: #ff0000;
+            box-shadow: 0 8px 25px rgba(255,0,0,0.2);
         }
 
         .contact-card .icon { width: 36px; height: 36px; }
         .contact-card .icon svg { width: 100%; height: 100%; fill: #4cc9f0; }
-        .contact-card:hover .icon svg { fill: #f72585; }
+        .contact-card:hover .icon svg { fill: #ff0000; }
         .contact-card .label { font-size: 0.85rem; color: #8888aa; }
-        .contact-card .value { font-size: 0.9rem; font-weight: 600; word-break: break-all; color: #ffffff; }
+        .contact-card .value { font-size: 0.9rem; font-weight: 600; word-break: break-word; color: #ffffff; }
 
         .skills-grid {
             display: flex;
@@ -183,9 +187,9 @@
         }
 
         .skill-tag:hover {
-            background: rgba(247,37,133,0.2);
-            border-color: #f72585;
-            color: #f72585;
+            background: rgba(255,0,0,0.2);
+            border-color: #ff0000;
+            color: #ff0000;
             transform: scale(1.05);
         }
 
@@ -194,7 +198,7 @@
             padding: 1.5rem;
             color: #666;
             font-size: 0.85rem;
-            border-top: 1px solid rgba(247,37,133,0.15);
+            border-top: 1px solid rgba(255,0,0,0.15);
             width: 100%;
             text-align: center;
         }
@@ -210,7 +214,8 @@
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
             .container { padding: 1rem; padding-top: 4rem; }
-            .contact-grid { grid-template-columns: 1fr 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+            .contact-card { word-break: break-word; }
         }
     </style>
 </head>
@@ -223,6 +228,9 @@
 
     <!-- Language Header -->
     <div class="lang-header">
+        <a href="./store/dist/index.html" class="lang-btn" style="background: rgba(16, 163, 127, 0.2); border-color: #10a37f; color: #10a37f; font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 0.4rem;">
+            <span>🕹️ AI Store (ChatGPT &amp; Claude)</span>
+        </a>
         <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
         <button class="lang-btn" data-lang="vi" onclick="setLang('vi')">VI</button>
     </div>
@@ -240,6 +248,37 @@
             <span data-en="Data Analyst" data-vi="Phân tích dữ liệu">Data Analyst</span>
             <span data-en="Video Editor" data-vi="Biên tập video">Video Editor</span>
             <span data-en="YouTuber" data-vi="YouTuber">YouTuber</span>
+        </div>
+
+        <div class="section">
+            <h2 data-en="Contact Me" data-vi="Liên hệ">Contact Me</h2>
+            <div class="contact-grid">
+                <a class="contact-card" href="https://discord.gg/DqPe8dnAMP" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></div>
+                    <div class="value">Discord</div>
+                    <div class="label">discord.gg/DqPe8dnAMP</div>
+                </a>
+                <a class="contact-card" href="https://www.instagram.com/evernerden/reels/" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+                    <div class="value">Instagram</div>
+                    <div class="label">@evernerden</div>
+                </a>
+                <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyenducdat298@gmail.com" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                    <div class="value">Email</div>
+                    <div class="label">nguyenducdat298@gmail.com</div>
+                </a>
+                <a class="contact-card" href="https://www.tiktok.com/@evernerd" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
+                    <div class="value">TikTok</div>
+                    <div class="label">@evernerd</div>
+                </a>
+                <a class="contact-card" href="https://www.youtube.com/@Evernerd29" target="_blank" rel="noopener">
+                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+                    <div class="value">YouTube</div>
+                    <div class="label">@Evernerd29</div>
+                </a>
+            </div>
         </div>
 
         <div class="section">
@@ -262,32 +301,6 @@
             </div>
         </div>
 
-        <div class="section">
-            <h2 data-en="Contact Me" data-vi="Liên hệ">Contact Me</h2>
-            <div class="contact-grid">
-                <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyenducdat298@gmail.com" target="_blank" rel="noopener">
-                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-                    <div class="value">Email</div>
-                    <div class="label">nguyenducdat298@gmail.com</div>
-                </a>
-                <a class="contact-card" href="https://www.facebook.com/profile.php?id=61586359562366" target="_blank" rel="noopener">
-                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
-                    <div class="value">Facebook</div>
-                    <div class="label">@nguyenducdat</div>
-                </a>
-                <a class="contact-card" href="https://www.tiktok.com/@evernerd" target="_blank" rel="noopener">
-                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
-                    <div class="value">TikTok</div>
-                    <div class="label">@evernerd</div>
-                </a>
-                <a class="contact-card" href="https://www.youtube.com/@Evernerd29" target="_blank" rel="noopener">
-                    <div class="icon"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
-                    <div class="value">YouTube</div>
-                    <div class="label">@Evernerd29</div>
-                </a>
-            </div>
-        </div>
-
         <div class="footer" data-en="&copy; 2026 Nguyen Duc Dat. Built with passion." data-vi="&copy; 2026 Nguyễn Đức Đạt. Xây dựng với đam mê.">&copy; 2026 Nguyen Duc Dat. Built with passion.</div>
     </div>
 
@@ -305,11 +318,18 @@
 
         (function() {
             var saved = localStorage.getItem('lang');
-            if (!saved) {
-                var vi = navigator.language || navigator.userLanguage || '';
-                saved = vi.toLowerCase().startsWith('vi') ? 'vi' : 'en';
+            if (saved) { setLang(saved); }
+            else {
+                var fb = navigator.language || navigator.userLanguage || '';
+                setLang(fb.toLowerCase().startsWith('vi') ? 'vi' : 'en');
+                fetch('https://ipapi.co/country_code/')
+                    .then(function(r) { return r.ok ? r.text() : ''; })
+                    .then(function(cc) {
+                        cc = (cc || '').trim().toUpperCase();
+                        if (cc) setLang(cc === 'VN' ? 'vi' : 'en');
+                    })
+                    .catch(function() {});
             }
-            setLang(saved);
 
             var canvas = document.createElement('canvas');
             canvas.id = 'particles-canvas';
@@ -320,7 +340,7 @@
             function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
             resize();
             window.addEventListener('resize', resize);
-            var colors = ['#f72585', '#4cc9f0'];
+            var colors = ['#ff0000', '#4cc9f0'];
             for (var i = 0; i < COUNT; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
