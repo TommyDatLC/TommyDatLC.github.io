@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom 8-bit Scanlines & CRT FX */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.35) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
+
+/* 3D Bevel Pixel Button */
+.pixel-btn {
+  position: relative;
+  transition: all 0.1s ease;
+  box-shadow: 
+    inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25),
+    inset -1px -1px 0px 0px rgba(0, 0, 0, 0.7),
+    0 4px 0 0 #000000;
+}
+
+.pixel-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 1px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset -1px -1px 0px 0px rgba(0, 0, 0, 0.7),
+    0 5px 0 0 #000000;
+}
+
+.pixel-btn:active {
+  transform: translateY(3px);
+  box-shadow: 
+    inset 1px 1px 0px 0px rgba(0, 0, 0, 0.7),
+    inset -1px -1px 0px 0px rgba(255, 255, 255, 0.25),
+    0 1px 0 0 #000000;
+}
+
+/* Background Dot Matrix Grid */
+.dot-matrix {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
