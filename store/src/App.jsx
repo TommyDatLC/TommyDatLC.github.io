@@ -2,6 +2,8 @@ import React from 'react';
 import RetroNavbar from './components/RetroNavbar';
 import HeroConsole from './components/HeroConsole';
 import ProductDrops from './components/ProductDrops';
+import WarrantySpecs from './components/WarrantySpecs';
+import FaqTerminal from './components/FaqTerminal';
 
 export default function App() {
   return (
@@ -11,6 +13,8 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <HeroConsole />
         <ProductDrops />
+        <WarrantySpecs />
+        <FaqTerminal />
       </main>
     </div>
   );
