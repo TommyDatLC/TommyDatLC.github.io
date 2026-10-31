@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom 8-bit Scanlines & CRT FX */
+/* Custom 8-bit Purple & Gold Scanlines & CRT FX */
 .scanlines {
   background: linear-gradient(
-    rgba(18, 16, 16, 0) 50%, 
-    rgba(0, 0, 0, 0.35) 50%
+    rgba(18, 16, 24, 0) 50%, 
+    rgba(12, 7, 20, 0.45) 50%
   ), linear-gradient(
     90deg,
-    rgba(255, 0, 0, 0.03),
-    rgba(0, 255, 0, 0.01),
-    rgba(0, 0, 255, 0.03)
+    rgba(168, 85, 247, 0.04),
+    rgba(251, 191, 36, 0.02),
+    rgba(168, 85, 247, 0.04)
   );
   background-size: 100% 4px, 6px 100%;
 }
@@ -42,8 +42,8 @@
     0 1px 0 0 #000000;
 }
 
-/* Background Dot Matrix Grid */
+/* Background Dot Matrix Grid in Soft Violet */
 .dot-matrix {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(168, 85, 247, 0.14) 1px, transparent 1px);
   background-size: 24px 24px;
 }

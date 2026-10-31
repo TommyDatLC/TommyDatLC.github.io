@@ -8,17 +8,21 @@ export default {
     extend: {
       colors: {
         retro: {
-          bg: '#0a0c12',
-          card: '#131722',
-          cardHover: '#181d2b',
-          border: '#2a3143',
-          mint: '#10a37f',
-          mintGlow: '#2ed573',
-          amber: '#e06c4b',
+          bg: '#0c0714',
+          card: '#160e24',
+          cardHover: '#1f1433',
+          border: '#352352',
+          purple: '#a855f7',
+          purpleGlow: '#c084fc',
+          gold: '#fbbf24',
+          goldGlow: '#f59e0b',
+          mint: '#a855f7', // Primary: Neon Purple
+          mintGlow: '#c084fc',
+          amber: '#fbbf24', // Secondary: Cyber Gold
           amberGlow: '#f59e0b',
           text: '#ffffff',
-          muted: '#8f9ba8',
-          subtle: '#4b5563'
+          muted: '#a497be',
+          subtle: '#634f82'
         }
       },
       fontFamily: {
@@ -27,8 +31,9 @@ export default {
         sans: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'pixel': '0 0 0 2px #2a3143, 0 4px 0 0 #000000',
-        'pixel-hover': '0 0 0 2px #10a37f, 0 6px 0 0 #10a37f40',
+        'pixel': '0 0 0 2px #352352, 0 4px 0 0 #000000',
+        'pixel-hover': '0 0 0 2px #a855f7, 0 6px 0 0 #a855f740',
+        'pixel-gold': '0 0 0 2px #fbbf24, 0 6px 0 0 #fbbf2440',
         'pixel-btn': 'inset -2px -2px 0px 0px rgba(0,0,0,0.6), inset 2px 2px 0px 0px rgba(255,255,255,0.2)',
         'pixel-btn-active': 'inset 2px 2px 0px 0px rgba(0,0,0,0.6)',
       }

@@ -20,18 +20,18 @@ export default function RetroNavbar() {
         
         {/* Brand Logo & Version */}
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 bg-retro-card border border-retro-border flex items-center justify-center text-retro-mint shadow-pixel">
-            <Terminal className="w-5 h-5" />
+          <div className="w-8 h-8 bg-retro-card border border-retro-border flex items-center justify-center text-retro-gold shadow-pixel">
+            <Terminal className="w-5 h-5 text-retro-gold" />
           </div>
           <div>
             <div className="font-pixel text-sm sm:text-base tracking-wider text-white flex items-center gap-2">
-              <span>EVERNERD</span>
-              <span className="text-retro-mint">//</span>
-              <span className="text-retro-mint">AI_STORE</span>
+              <span className="text-white">EVERNERD</span>
+              <span className="text-retro-purple">//</span>
+              <span className="text-retro-gold font-bold">AI_STORE</span>
             </div>
             <div className="text-[10px] font-mono text-retro-muted flex items-center gap-1.5">
-              <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>LIVE DROPS IN STOCK</span>
+              <span className="inline-block w-2 h-2 rounded-full bg-retro-gold animate-pulse shadow-[0_0_8px_#fbbf24]"></span>
+              <span className="text-retro-gold/90 font-semibold">ALL DROPS IN STOCK</span>
             </div>
           </div>
         </div>
@@ -43,9 +43,9 @@ export default function RetroNavbar() {
             onClick={handleAudioToggle}
             onMouseEnter={() => playRetroSound('blip')}
             title="Bật/Tắt âm thanh 8-bit"
-            className="pixel-btn px-2.5 sm:px-3 py-1.5 bg-retro-card border border-retro-border hover:border-retro-mint text-xs font-pixel text-gray-300 hover:text-retro-mint flex items-center gap-1.5 transition-colors"
+            className="pixel-btn px-2.5 sm:px-3 py-1.5 bg-retro-card border border-retro-border hover:border-retro-gold text-xs font-pixel text-gray-300 hover:text-retro-gold flex items-center gap-1.5 transition-colors"
           >
-            {sfxOn ? <Volume2 className="w-3.5 h-3.5 text-retro-mint" /> : <VolumeX className="w-3.5 h-3.5 text-gray-500" />}
+            {sfxOn ? <Volume2 className="w-3.5 h-3.5 text-retro-gold" /> : <VolumeX className="w-3.5 h-3.5 text-gray-500" />}
             <span className="hidden sm:inline">{sfxOn ? 'SFX: ON' : 'SFX: OFF'}</span>
           </button>
 
@@ -53,7 +53,7 @@ export default function RetroNavbar() {
           <a
             href="../index.html"
             onMouseEnter={() => playRetroSound('blip')}
-            className="pixel-btn px-3 py-1.5 bg-retro-card border border-retro-border hover:border-retro-mint text-xs font-pixel text-gray-300 hover:text-white flex items-center gap-1.5 transition-colors"
+            className="pixel-btn px-3 py-1.5 bg-retro-card border border-retro-border hover:border-retro-purple text-xs font-pixel text-gray-300 hover:text-retro-purple flex items-center gap-1.5 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">PORTFOLIO</span>
