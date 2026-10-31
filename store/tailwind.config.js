@@ -16,9 +16,9 @@ export default {
           purpleGlow: '#c084fc',
           gold: '#fbbf24',
           goldGlow: '#f59e0b',
-          mint: '#a855f7', // Primary: Neon Purple
+          mint: '#a855f7',
           mintGlow: '#c084fc',
-          amber: '#fbbf24', // Secondary: Cyber Gold
+          amber: '#fbbf24',
           amberGlow: '#f59e0b',
           text: '#ffffff',
           muted: '#a497be',
@@ -26,7 +26,7 @@ export default {
         }
       },
       fontFamily: {
-        pixel: ['"Silkscreen"', 'monospace'],
+        pixel: ['"VT323"', 'monospace'],
         mono: ['"Courier New"', 'Courier', 'monospace'],
         sans: ['"Inter"', 'system-ui', 'sans-serif'],
       },

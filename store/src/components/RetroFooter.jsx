@@ -2,8 +2,11 @@ import React from 'react';
 import { STORE_CONFIG } from '../data/products';
 import { playRetroSound } from '../utils/sound';
 import { MessageSquare, Send, Youtube, Instagram, Mail } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function RetroFooter() {
+  const { t } = useLanguage();
+
   const socials = [
     { name: 'Discord Community', url: STORE_CONFIG.discordUrl, icon: MessageSquare },
     { name: 'Zalo Support', url: STORE_CONFIG.zaloUrl, icon: Send },
@@ -19,15 +22,15 @@ export default function RetroFooter() {
           
           {/* Left Brand */}
           <div className="text-center md:text-left">
-            <div className="font-pixel text-sm text-white tracking-wider flex items-center justify-center md:justify-start gap-2">
+            <div className="font-pixel text-base sm:text-lg text-white tracking-wider flex items-center justify-center md:justify-start gap-2">
               <span className="text-white">EVERNERD //</span>
               <span className="text-retro-gold font-bold">AI DROP STORE</span>
-              <span className="text-[10px] text-retro-gold bg-retro-gold/10 border border-retro-gold/30 px-1.5 py-0.5 rounded">
+              <span className="text-xs text-retro-gold bg-retro-gold/10 border border-retro-gold/30 px-2 py-0.5 rounded font-mono">
                 {STORE_CONFIG.version}
               </span>
             </div>
             <p className="text-xs text-retro-muted mt-1 font-mono">
-              Crafted in Retro Purple &amp; Gold by {STORE_CONFIG.author}
+              {t.footer.sub} {STORE_CONFIG.author}
             </p>
           </div>
 
@@ -42,10 +45,10 @@ export default function RetroFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onMouseEnter={() => playRetroSound('blip')}
-                  className="pixel-btn px-3 py-1.5 bg-retro-card border border-retro-border hover:border-retro-gold text-xs text-gray-300 hover:text-white flex items-center gap-1.5 transition-colors"
+                  className="pixel-btn px-3.5 py-2 bg-retro-card border-2 border-retro-border hover:border-retro-gold text-xs font-pixel text-gray-200 hover:text-white flex items-center gap-1.5 transition-colors tracking-wide"
                 >
-                  <Icon className="w-3.5 h-3.5 text-retro-gold" />
-                  <span className="text-[11px] font-sans">{s.name}</span>
+                  <Icon className="w-4 h-4 text-retro-gold" />
+                  <span className="text-xs font-sans">{s.name}</span>
                 </a>
               );
             })}
@@ -54,8 +57,8 @@ export default function RetroFooter() {
         </div>
 
         {/* Bottom copyright notice */}
-        <div className="mt-8 pt-6 border-t border-purple-950/60 text-center text-[11px] text-gray-500 font-mono">
-          © 2026 EVERNERD. All rights reserved. Không liên kết chính thức với OpenAI hay Anthropic — Chúng tôi cung cấp dịch vụ đăng ký tài khoản &amp; hỗ trợ kỹ thuật độc lập.
+        <div className="mt-8 pt-6 border-t border-purple-950/60 text-center text-xs text-gray-400 font-sans leading-relaxed">
+          {t.footer.disclaimer}
         </div>
       </div>
     </footer>
